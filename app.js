@@ -34,9 +34,11 @@ boxes.forEach((box) => {
   box.addEventListener("click", () => {
     if (turnO) {
       box.innerHTML = "O"; //player O turn
+      box.style.color = "#0D4715"; // Set color for O (white)
       turnO = false;
     } else {
-      box.innerHTML = "X"; //player X turni
+      box.innerHTML = "X"; // Player X turn
+      box.style.color = "#E9762B"; // Set color for X (blue)
       turnO = true;
     }
     box.disabled = true; // Disable the box after clickS
@@ -49,6 +51,7 @@ boxes.forEach((box) => {
     }
   });
 });
+
 const showWinner = (winner) => {
   // Function to display the winner
   msg.innerText = `Congratulations, Winner is ${winner}`;
@@ -97,3 +100,4 @@ const checkWinner = () => {
 
 newGameBtn.addEventListener("click", resetGame); // Corrected to call resetGame
 resetBtn.addEventListener("click", resetGame); // Corrected to call resetGame
+
